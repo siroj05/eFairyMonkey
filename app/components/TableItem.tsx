@@ -1,8 +1,15 @@
-// import ListItem from "./listItem";
+import { Form } from "@remix-run/react"
 
-import { Link } from "react-router-dom"
 
 export default function TableItem({data}:any){
+    // const fetcher = useFetcher();
+    // const deleteHandler = () => {
+    //     const proceed = confirm('are you sure?')
+    //     if(!proceed){
+    //         return;
+    //     }
+    //     fetcher.submit(null, {method : 'delete', action : `/expenses/${id}`});
+    // }
     const dataItem = data
     return(
         <div className="">
@@ -26,7 +33,11 @@ export default function TableItem({data}:any){
                                         <td className="px-6 py-4">{item.price}$</td>
                                         <td className="px-6 py-4">
                                             <menu>
-                                                Edit || Delele || Detail
+                                                <Form method="delete" action={`/expenses/${item.id}`}>
+                                                    Edit ||
+                                                    <button>Delete</button>  
+                                                    || Detail
+                                                </Form>
                                             </menu>
                                         </td>
                                     </tr>    

@@ -1,4 +1,4 @@
-import { prisma, Prisma } from "./database.server";
+import { prisma} from "./database.server";
 
 export async function addItemData(item){
     try {
@@ -21,4 +21,10 @@ export async function getDataItem(){
         }
     })
     return expenses
+}
+
+export async function deleteitem(id){
+    const expenses =  await prisma.post.delete({
+        where : {id}
+    })
 }
