@@ -23,7 +23,20 @@ export async function getDataItem(){
     return expenses
 }
 
-export async function deleteitem(id){
+export async function updateItemData(idData,data){
+    const id = parseInt(idData)
+    const expenses = await prisma.post.update({
+        where : {id},
+        data : {
+            title : data.title,
+            category : data.category,
+            price : data.price
+        }
+    })
+}
+
+export async function deleteitem(idData){
+    const id = parseInt(idData)
     const expenses =  await prisma.post.delete({
         where : {id}
     })

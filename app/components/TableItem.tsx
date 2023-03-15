@@ -1,4 +1,4 @@
-import { Form } from "@remix-run/react"
+import { Form, Link } from "@remix-run/react"
 
 
 export default function TableItem({data}:any){
@@ -21,7 +21,7 @@ export default function TableItem({data}:any){
                             <th scope="col" className="px-6 py-3">Product name</th>
                             <th scope="col" className="px-6 py-3">Category</th>
                             <th scope="col" className="px-6 py-3">Price</th>
-                            <th scope="col" className="px-6 py-3">Action</th>
+                            <th scope="col" className="px-6 py-3 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,12 +32,12 @@ export default function TableItem({data}:any){
                                         <td className="px-6 py-4">{item.category}</td>
                                         <td className="px-6 py-4">{item.price}$</td>
                                         <td className="px-6 py-4">
-                                            <menu>
+                                            <menu className="flex justify-between">
+                                                <Link to={`${item.id}`}>Edit</Link>
                                                 <Form method="delete" action={`/expenses/${item.id}`}>
-                                                    Edit ||
                                                     <button>Delete</button>  
-                                                    || Detail
                                                 </Form>
+                                                    Detail
                                             </menu>
                                         </td>
                                     </tr>    
