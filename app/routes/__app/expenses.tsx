@@ -10,7 +10,6 @@ export default function ExpensesApp() {
   // console.log(data)
   return (
     <>
-      <NavigationHeader/>
       <main 
         className="container mx-auto px-10 mt-28"
       >

@@ -3,7 +3,7 @@ import { Form, Link, useMatches, useParams } from "@remix-run/react";
 export default function AddForm(){
     const params = useParams();
     const match = useMatches();
-    const data = match.find((matches : any) => matches.id === 'routes/expenses')?.data;
+    const data = match.find((matches : any) => matches.id === 'routes/__app/expenses')?.data;
     const dataLoader = data.find((datas : any) => datas.id == params.id)
     const defaultValue = dataLoader?{
         title : dataLoader.title,

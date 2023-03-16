@@ -17,10 +17,4 @@ model Post {
   price     String
 }
 
-model User {
-  id  String @unique
-  password String
-  email String
-}
-
 // DATABASE_URL="file:./dev.db" .env
