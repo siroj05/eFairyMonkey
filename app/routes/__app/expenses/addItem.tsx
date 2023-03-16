@@ -21,7 +21,6 @@ export default function Additem(){
 export async function action({request} : any){
     const formData = await request.formData()
     const expenseData = Object.fromEntries(formData)
-    // console.log(expenseData)
     await addItemData(expenseData)
     return redirect('..')
 }
